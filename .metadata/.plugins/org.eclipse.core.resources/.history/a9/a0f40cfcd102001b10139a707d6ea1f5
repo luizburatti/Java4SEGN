@@ -1,0 +1,24 @@
+package com.test;
+
+import java.sql.Connection;
+
+import com.db.ConexaoHSQLDB;
+
+public class TestConection {
+
+	
+	public static void main (String[] args ) 
+	
+	{
+		ConexaoHSQLDB conn = new ConexaoHSQLDB();
+		
+		 Connection connection = conn.conectar();
+		 
+		 System.out.println(connection + "Conectado com sucesso");
+		
+		
+	}
+	
+	
+	
+}

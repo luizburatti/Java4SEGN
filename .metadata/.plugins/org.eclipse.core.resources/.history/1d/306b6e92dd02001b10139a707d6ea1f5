@@ -1,0 +1,42 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.db.ConexaoHSQLDB;
+import com.entity.Pessoa;
+
+public class PessoaDAO extends ConexaoHSQLDB {
+	
+	final String SQL_INSERT_PESSOA = "INSERT INTO  PESSOA (NOME,EMAIL) values (?,?)";
+	
+	public int inserir (Pessoa pessoa ) 
+
+	{
+		
+		int qtde  =0;
+		
+		 
+		 try (Connection  connection = this.conectar();
+			PreparedStatement  pst =  connection.prepareStatement(SQL_INSERT_PESSOA);){
+			 
+	
+			 pst.setString(1,pessoa.getNome());
+			 pst.setString(2,pessoa.getEmail());
+			  qtde = pst.executeUpdate();
+			  System.out.println("QTDE Inserida :" + qtde);
+		     }
+		 catch (SQLException e)
+		 {
+			 e.printStackTrace();
+			 
+		 }
+		
+		 return qtde;
+		
+	}
+	
+	
+
+}

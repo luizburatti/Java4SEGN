@@ -1,0 +1,192 @@
+package com.entity;
+
+import java.time.LocalDate;
+
+public class Pessoa {
+
+	private int  id ;
+
+	private String  nome ;
+
+	private String   email  ;
+
+    private String choiceBoxSexo;
+	
+	private LocalDate dataNascimento;
+	
+	private float textfieldPeso;
+	
+	
+	
+	/*
+	public Pessoa(int id, String nome, String email, String choiceBoxSexo, LocalDate dataNascimento,
+			float textfieldPeso) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.choiceBoxSexo = choiceBoxSexo;
+		this.dataNascimento = dataNascimento;
+		this.textfieldPeso = textfieldPeso;
+	}*/
+
+
+
+	/*public Pessoa(int id, String nome, String email) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+	}*/
+
+
+
+	/*public Pessoa(String nome, String email, String string, String string2, LocalDate localDate) {
+		super();
+		this.nome = nome;
+		this.email = email;
+	}*/
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
+	
+	public String getChoiceBoxSexo() {
+		return choiceBoxSexo;
+	}
+
+
+
+	public void setChoiceBoxSexo(String choiceBoxSexo) {
+		this.choiceBoxSexo = choiceBoxSexo;
+	}
+
+
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+
+
+	public float getTextfieldPeso() {
+		return textfieldPeso;
+	}
+
+
+
+	public void setTextfieldPeso(float textfieldPeso) {
+		this.textfieldPeso = textfieldPeso;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((choiceBoxSexo == null) ? 0 : choiceBoxSexo.hashCode());
+		result = prime * result + ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + Float.floatToIntBits(textfieldPeso);
+		return result;
+	}
+	
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		if (choiceBoxSexo == null) {
+			if (other.choiceBoxSexo != null)
+				return false;
+		} else if (!choiceBoxSexo.equals(other.choiceBoxSexo))
+			return false;
+		if (dataNascimento == null) {
+			if (other.dataNascimento != null)
+				return false;
+		} else if (!dataNascimento.equals(other.dataNascimento))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (Float.floatToIntBits(textfieldPeso) != Float.floatToIntBits(other.textfieldPeso))
+			return false;
+		return true;
+	}
+	
+	
+	public Pessoa () 
+	{
+	
+	}
+	
+	
+	
+
+
+	public Pessoa(int id, String nome, String email, String choiceBoxSexo, LocalDate dataNascimento,
+			float textfieldPeso) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.choiceBoxSexo = choiceBoxSexo;
+		this.dataNascimento = dataNascimento;
+		this.textfieldPeso = textfieldPeso;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Pessoa [id=" + id + ", nome=" + nome + ", email=" + email + ", choiceBoxSexo=" + choiceBoxSexo
+				+ ", dataNascimento=" + dataNascimento + ", textfieldPeso=" + textfieldPeso + "]";
+	}
+	
+
+}

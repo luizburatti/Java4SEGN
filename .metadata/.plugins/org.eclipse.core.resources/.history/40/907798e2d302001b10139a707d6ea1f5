@@ -1,0 +1,44 @@
+package com.test;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.db.ConexaoHSQLDB;
+
+public class TestConection {
+
+	
+	public static void main (String[] args ) 
+	
+	{
+		ConexaoHSQLDB conn = new ConexaoHSQLDB();
+		
+		 Connection connection = conn.conectar();
+		 
+		 System.out.println(connection + "    " + "Conectado com sucesso");
+		
+		
+		 
+	 final String SQL_INSERT_PESSOA = "INSERT INTO (NOME,EMAIL) values (?,?)";
+		 
+		 PreparedStatement  pst;
+		 
+		 try {
+			 
+			 pst =  connection.prepareStatement(SQL_INSERT_PESSOA);
+			 pst.setString(1,"aaaaa");
+			 pst.setString(2,"aaaaa@lsuis.com ");
+		 
+		     }
+		 catch (SQLException e)
+		 {
+			 e.printStackTrace();
+			 
+		 }
+		
+	}
+	
+	
+	
+}
